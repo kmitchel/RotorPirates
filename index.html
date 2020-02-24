@@ -4,37 +4,16 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 
-        <link rel="stylesheet" href="https://cdn.rawgit.com/apocolipse/RotorPirates/3b92df58/js/style.css">
+        <link rel="stylesheet" href="js/style.css">
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-        <script src="https://cdn.rawgit.com/apocolipse/RotorPirates/ae2f80f1/js/RotorPirates.js"></script>
+        <script src="js/RotorPirates.js"></script>
     </head>
     <body>
         <h3>RotorPirates!</h3>
         <div id="curve_chart" style="width: 900px; height: 500px; margin-top:-70px"></div>
         <div class="rateBox">
-            <span class="block-title">RaceFlight Rates</span>
-            <button onclick="calcFromRF()" class="btn btn-secondary">Calc Others</button>
-
-            <div>
-                <span class="input-title">Rate:</span>
-                <span class="input-title">Expo:</span>
-                <span class="input-title">Acro+:</span>
-            </div>
-            <div>
-                <input type="number" id="rfRate" min="0" max="2000" value="400" class="input-field"/>
-                <input type="number" id="rfExpo" min="0" max="100"  value="50"  class="input-field"/>
-                <input type="number" id="rfAcro" min="0" max="1000" value="140" class="input-field"/>
-            </div>
-            <div>
-                <input type="range" id="rfRateSlider" class="slider" min="0" max="2000" value="400"/>
-                <input type="range" id="rfExpoSlider" class="slider" min="0" max="100"  value="50" />
-                <input type="range" id="rfAcroSlider" class="slider" min="0" max="1000" value="140"/>
-            </div>
-        </div>
-        <div class="rateBox">
             <span class="block-title">BetaFlight Rates</span>
-            <button onclick="calcFromBF()" class="btn btn-secondary">Calc Others</button>
             <div>
                 <span class="input-title">RC Rate:</span>
                 <span class="input-title">Super Rate:</span>
@@ -52,25 +31,23 @@
             </div>
         </div>
         <div class="rateBox">
-            <span class="block-title">KISS Rates</span>
-            <button onclick="calcFromKiss()" class="btn btn-secondary">Calc Others</button>
+            <span class="block-title">Actual Rates</span>
             <div>
                 <span class="input-title">RC Rate:</span>
-                <span class="input-title">Rate:</span>
-                <span class="input-title">RC Curve:</span>
+                <span class="input-title">Super Rate:</span>
+                <span class="input-title">RC Expo:</span>
             </div>
             <div>
-                <input type="number" id="kissRcRate" step="0.01" min="0.00" max="10.00" value="0.70" placeholder='0.00' class="input-field"/>
-                <input type="number" id="kissRate"   step="0.01" min="0.00" max="1.00" value="0.70" placeholder='0.00' class="input-field"/>
-                <input type="number" id="kissCurve"  step="0.01" min="0.00" max="1.00" value="0.40" placeholder='0.00' class="input-field"/>
+                <input type="number" id="aRate"  step="0.01" min="0.00" max="3.00" value="0.2" placeholder='0.00' class="input-field"/>
+                <input type="number" id="aSuper" step="0.01" min="0.00" max="1.00" value="0.67" placeholder='0.00' class="input-field"/>
+                <input type="number" id="aExpo"  step="0.01" min="0.00" max="1.00" value="0.54" placeholder='0.00' class="input-field"/>
             </div>
             <div>
-                <input type="range" id="kissRcRateSlider" class="slider" step="0.01" min="0.00" max="10.00" value="0.70" placeholder='0.00'/>
-                <input type="range" id="kissRateSlider"   class="slider" step="0.01" min="0.00" max="1.00" value="0.70" placeholder='0.00'/>
-                <input type="range" id="kissCurveSlider"  class="slider" step="0.01" min="0.00" max="1.00" value="0.40" placeholder='0.00'/>
+                <input type="range" id="aRateSlider"  class="slider" step="0.01" min="0.00" max="3.00" value="0.2" placeholder='0.00'/>
+                <input type="range" id="aSuperSlider" class="slider" step="0.01" min="0.00" max="1.00" value="0.67" placeholder='0.00'/>
+                <input type="range" id="aExpoSlider"  class="slider" step="0.01" min="0.00" max="1.00" value="0.54" placeholder='0.00'/>
             </div>
         </div>
-
         <div class="footer">
             See original code on <a href="https://github.com/apocolipse/RotorPirates">GitHub</a>
             <br>Special Thanks to Robert Miroszewski for JS/HTML
